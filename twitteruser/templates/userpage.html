@@ -1,0 +1,21 @@
+<h1>Profile</h1>
+<h2>{{user.username}}</h2>
+{% if user.id != request.user.id %}
+    {% if not is_following %}
+        <a class="follow-link" href="/follow/{{user.id}}"><button>Follow</button></a>
+    {% else %}
+        <a class="follow-link" href="/unfollow/{{user.id}}"><button>Unfollow</button></a>
+    {% endif %}
+{% endif %}
+
+<a href="/"><button>Go back Home</button></a>
+
+<div>
+    <span>Tweet Count: {{tweets|length}}</span>
+    <span>Following Count: {{user.following.count}}</span>
+</div>
+{% for tweet in tweets %}
+    <li>
+    {{tweet}}
+    </li>
+{% endfor %}
