@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     'notification',
     'tweet',
     'bootstrap4',
-    'crispy_forms',
-    'django_icons'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
