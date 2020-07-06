@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'notification',
     'tweet',
     'bootstrap4',
+    'django_heroku'
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [

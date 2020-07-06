@@ -4,6 +4,7 @@ from tweet.models import Tweet
 from .models import CustomUser
 from notification.models import Notification
 
+
 @login_required(login_url='/login')
 def index(request):
     following = request.user.following.all()
