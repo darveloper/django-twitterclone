@@ -5,15 +5,18 @@ Babel==2.8.0
 beautifulsoup4==4.9.1
 certifi==2020.6.20
 chardet==3.0.4
+dj-database-url==0.5.0
 Django==3.0.5
 django-bootstrap4==2.2.0
 django-computed-property==0.3.0
 django-cors-headers==3.4.0
+django-heroku==0.3.1
 django-icons==2.1.0
 djangorestframework==3.11.0
 docutils==0.16
 entrypoints==0.3
 flake8==3.7.9
+gunicorn==20.0.4
 idna==2.10
 imagesize==1.2.0
 isort==4.3.21
@@ -22,6 +25,7 @@ lazy-object-proxy==1.4.3
 MarkupSafe==1.1.1
 mccabe==0.6.1
 packaging==20.4
+psycopg2==2.8.5
 pycodestyle==2.5.0
 pyflakes==2.1.1
 Pygments==2.6.1
@@ -45,4 +49,5 @@ sphinxcontrib-serializinghtml==1.1.4
 sqlparse==0.3.1
 toml==0.10.0
 urllib3==1.25.9
+whitenoise==5.1.0
 wrapt==1.12.1
