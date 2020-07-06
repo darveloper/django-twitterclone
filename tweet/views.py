@@ -24,7 +24,7 @@ def tweet_view(request):
             tweet.save()
             notification_alert(tweet)
         return HttpResponseRedirect(reverse('home'))
-    return render(request, 'generic_form.html', {'form': TweetForm()})
+    return render(request, 'tweet.html', {'form': TweetForm()})
 
 def detail_view(request, id):
     tweet = Tweet.objects.get(id=id)

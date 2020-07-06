@@ -9,5 +9,5 @@ from authentication.views import (
 urlpatterns = [
     path('login/', login_view, name='login'),
     path('register/', register_view),
-    path('logout/', logout_view)
+    path('logout/', logout_view, name="logout")
 ]

@@ -12,17 +12,20 @@
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: lightgray;">
             <div class="container">
                 <ul class="nav navbar-nav">
+                {% if request.user.is_authenticated %}
                     <li><a class="lead navbar-brand" href="/">Home</a></li>
                     <li><a class="lead navbar-brand" href="/user/{{request.user.id}}">Profile</a></li>
                     
                     
                 </ul>
-                {% if request.user.is_authenticated %}
+                
                 <span class="navbar-text">
                     <a class="lead navbar-brand mr-sm-2" href="/add/">New Tweet</a>
-                    <a class="lead navbar-brand mr-sm-2" href="#">Logout</a>
+                    <a class="lead navbar-brand mr-sm-2" href="/logout">Logout</a>
                     
                 </span>
+                {% else %}
+                <li><a class="lead navbar-brand">Welcome To My Twitter-Clone!</a></li>
                 {% endif %}
             </div>
         </nav>

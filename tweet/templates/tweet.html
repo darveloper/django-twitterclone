@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center display-3">Create a New Tweet</h1>
+<div class="container-fluid">
+<center>
+    <form action="" method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send Tweet!">
+    </form>
+    </center>
+</div>
+{% endblock %}

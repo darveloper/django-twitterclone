@@ -13,7 +13,7 @@ def index(request):
 
 def user_view(request, user_id):
     user = CustomUser.objects.get(id=user_id)
-    tweets = Tweet.objects.filter(author=user)
+    tweets = Tweet.objects.filter(author=user).order_by("-post_date")
     logged_in_user = CustomUser.objects.get(id=request.user.id)
     is_following = logged_in_user.following.filter(id=user_id).exists()
     is_follower = logged_in_user.followers.all()

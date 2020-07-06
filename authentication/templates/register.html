@@ -2,17 +2,17 @@
 {% block content %}
 
 <div class="container">
-<center>
-<h1 class="display-2">Login</h1>
+
+<h1 class="display-2 text-center mb-4">Register</h1>
+<div class="form-group">
     <form action="" method="post">
         <div class="form-group">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Login">
+            <input type="submit" value="Register">
         </div>
     </form>
-    <p>If you don't have an account, <a href="/register">Register here!</a></p>
-    
-    </center>
+     <p>If you have an account, <a href="/login">Login here!</a></p>
+</div>
 </div>
 {% endblock %}
