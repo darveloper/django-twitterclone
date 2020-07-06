@@ -17,7 +17,7 @@ def login_view(request):
                 login(request, user)
                 return HttpResponseRedirect(reverse('home'))
     form = LoginForm()
-    return render(request, 'generic_form.html', {
+    return render(request, 'LoginPage.html', {
         'form': form
         })
 

@@ -1,6 +1,9 @@
-  
-<form action="" method="post">
+{% load crispy_form_tags %}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+
+<form action="" method="post" class="form">
     {% csrf_token %}
-    {{ form.as_p }}
+    {{ bootstrap_form form.as_p }}
     <input type="submit" value="Submit">
 </form>

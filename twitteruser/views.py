@@ -16,10 +16,12 @@ def user_view(request, user_id):
     tweets = Tweet.objects.filter(author=user)
     logged_in_user = CustomUser.objects.get(id=request.user.id)
     is_following = logged_in_user.following.filter(id=user_id).exists()
+    is_follower = logged_in_user.followers.all()
     return render(request, 'userpage.html', {
         'user': user,
         'tweets': tweets,
-        'is_following': is_following
+        'is_following': is_following,
+        'is_follower': is_follower
     })
 
 def follow_view(request, user_id):

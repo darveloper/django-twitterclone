@@ -40,9 +40,12 @@ INSTALLED_APPS = [
     'twitteruser',
     'authentication',
     'notification',
-    'tweet'
+    'tweet',
+    'bootstrap4',
+    'crispy_forms',
+    'django_icons'
 ]
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -103,6 +106,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+DJANGO_ICONS = {
+    "ICONS": {
+        "sign-out": {"name": "fa fa-sign-out"}
+    }
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/

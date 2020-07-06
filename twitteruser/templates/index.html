@@ -1,14 +1,31 @@
+{% extends 'base.html'%}
+{% block content %}
 {% csrf_token %}
-<div class='sidebar-menu'>
+{% comment %} <div class='sidebar-menu'>
     <a href="/notifications/">
         Notifications <span class='badge'>{{notifications|length}}</span>
     </a>
 </div>
 {% if request.user.is_authenticated %}
 <a href="/logout">Logout</a>
-{% endif %}
-<h1>Hello <a href="/user/{{request.user.id}}">{{request.user}}</a>!</h1>
-<button><a href="/add/">New Tweet</a></button>
+{% endif %} {% endcomment %}
+<div class="container fluid">
+    <div class="d-flex justify-content-center">
+        <h1 class="display-2">Hello <a class="text-dark" href="/user/{{request.user.id}}">{{request.user}}</a>!</h1>
+    </div>
+</div>
+    <div class="container">
+        <p></p>
+    </div>
+<div class="container-fluid">
 {% for tweet in tweets %}
-    <p><a href='/tweet/{{tweet.id}}'>{{tweet}}</a>: <a href="/user/{{tweet.author.id}}">{{tweet.author.username}}</a></p>
+<div class="card">
+    <div class="card-body">
+        <p><a class="lead text-dark" href='/tweet/{{tweet.id}}'>{{tweet}}</a></p>
+        <p class="text-right"><a class="text-muted" href="/user/{{tweet.author.id}}">{{tweet.author.username}}</a></p>
+        <span class="text-right"><footer class="text-muted">{{tweet.post_date}}</footer></span>
+    </div>
+</div>
 {% endfor %}
+</div>
+{% endblock %}

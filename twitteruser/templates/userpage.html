@@ -1,21 +1,39 @@
-<h1>Profile</h1>
-<h2>{{user.username}}</h2>
-{% if user.id != request.user.id %}
-    {% if not is_following %}
-        <a class="follow-link" href="/follow/{{user.id}}"><button>Follow</button></a>
-    {% else %}
-        <a class="follow-link" href="/unfollow/{{user.id}}"><button>Unfollow</button></a>
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container-fluid">
+    <h1 class="text-center display-4 mt-4 mb-4">{{user.username}}'s Profile</h1>
+    {% if user.id != request.user.id %}
+        {% if not is_following %}
+            <a class="follow-link" href="/follow/{{user.id}}"><button class="btn btn-outline-success btn-lg btn-block mb-3">Follow</button></a>
+        {% else %}
+            <a class="follow-link" href="/unfollow/{{user.id}}"><button class="btn btn-outline-danger btn-lg btn-block mb-3">Unfollow</button></a>
+        {% endif %}
     {% endif %}
-{% endif %}
 
-<a href="/"><button>Go back Home</button></a>
+    <div class="d-flex justify-content-center mb-5">
+        <button type="button" class="btn btn-primary mx-2">
+            Tweet Count: <span class="badge badge-light">{{tweets|length}}</span>
+        </button>
+        <button type="button" class="btn btn-primary mx-2">
+            Following: <span class="badge badge-light">{{user.following.count}}</span>
+        </button>
+        <button type="button" class="btn btn-primary mx-2">
+            Followers: <span class="badge badge-light">{{user.followers.count}}</span>
+        </button>
+    </div>
 
-<div>
-    <span>Tweet Count: {{tweets|length}}</span>
-    <span>Following Count: {{user.following.count}}</span>
+    <div class="container-fluid">
+        {% for tweet in tweets %}
+        <div class="card">
+            <div class="card-body">
+                <p><a class="lead text-dark" href='/tweet/{{tweet.id}}'>{{tweet}}</a></p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-{% for tweet in tweets %}
-    <li>
-    {{tweet}}
-    </li>
-{% endfor %}
+
+
+
+{% endblock %}
