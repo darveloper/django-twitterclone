@@ -6,8 +6,8 @@ from notification.models import Notification
 
 
 @login_required(login_url='/login')
-def index(request, user_id):
-    user = CustomUser.objects.get(id=user_id)
+def index(request):
+    user = CustomUser.objects.get(id=request.user.id)
     following = request.user.following.all()
     tweets = Tweet.objects.filter(author__in=following).order_by("-post_date")
     user_tweets = Tweet.objects.filter(author=user).order_by("-post_date")
