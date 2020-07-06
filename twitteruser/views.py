@@ -9,10 +9,9 @@ from notification.models import Notification
 def index(request):
     user = CustomUser.objects.get(id=request.user.id)
     following = request.user.following.all()
-    tweets = Tweet.objects.filter(author__in=following).order_by("-post_date")
-    user_tweets = Tweet.objects.filter(author=user).order_by("-post_date")
+    tweets = Tweet.objects.all().order_by("-post_date")
     notifications = Notification.objects.filter(receiver=request.user)
-    return render(request, 'index.html', {'tweets': tweets, 'user_tweets':user_tweets, 'notifications': notifications})
+    return render(request, 'index.html', {'tweets': tweets, 'notifications': notifications})
 
 def user_view(request, user_id):
     user = CustomUser.objects.get(id=user_id)
