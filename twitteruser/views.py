@@ -8,7 +8,6 @@ from notification.models import Notification
 @login_required(login_url='/login')
 def index(request):
     user = CustomUser.objects.get(id=request.user.id)
-    following = request.user.following.all()
     tweets = Tweet.objects.all().order_by("-post_date")
     notifications = Notification.objects.filter(receiver=request.user)
     return render(request, 'index.html', {'tweets': tweets, 'notifications': notifications})
@@ -37,3 +36,8 @@ def unfollow_view(request, user_id):
     logged_in_user = CustomUser.objects.get(id=request.user.id)
     logged_in_user.following.remove(user_unfollow)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def search_view(request):
+    # query = self.request.GET.get('q')
+    users = CustomUser.objects.filter(username__icontains='darveloper')
+    return render(request, 'search.html', { 'users': users })
