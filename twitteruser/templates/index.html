@@ -13,6 +13,9 @@
     <div class="d-flex justify-content-center">
         <h1 class="display-2">Hello <a class="text-dark" href="/user/{{request.user.id}}">{{request.user}}</a>!</h1>
     </div>
+    <form action="{% url 'search' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+</form>
 </div>
     <div class="container">
         <p></p>
@@ -27,5 +30,6 @@
     </div>
 </div>
 {% endfor %}
+
 </div>
 {% endblock %}

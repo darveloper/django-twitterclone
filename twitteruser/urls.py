@@ -7,7 +7,7 @@ from authentication.urls import urlpatterns as authentication_urls
 urlpatterns = [
     path('', index, name='home'),
     path('user/<int:user_id>', user_view),
-    path('search/', search_view),
+    path('search/', search_view, name='search'),
     path('follow/<int:user_id>', follow_view),
     path('unfollow/<int:user_id>', unfollow_view),
 ]

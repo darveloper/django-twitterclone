@@ -38,6 +38,6 @@ def unfollow_view(request, user_id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 def search_view(request):
-    # query = self.request.GET.get('q')
-    users = CustomUser.objects.filter(username__icontains='darveloper')
+    query = request.GET.get('q')
+    users = CustomUser.objects.filter(username__icontains=query)
     return render(request, 'search.html', { 'users': users })
