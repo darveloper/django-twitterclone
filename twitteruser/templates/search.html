@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Search Results</h2>
+<h1 class="display-4 text-center mt-4">Search Results</h2>
 
 {% for user in users %}
-    {{user.username}}
+<ul>
+    <a href="/user/{{user.id}}">{{user.username}}</a>
+</ul>
 {% endfor %}
 {% endblock %}
