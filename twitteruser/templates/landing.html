@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% block content %}
+{% csrf_token %}
+{% load static %}
+<center>
+    <div id="welcome-card" class="card">
+        <div id="landing-body" class="card-body">
+            <h5 class="card-title display-4 text-dark">
+            Welcome To Kwitter
+            </h5>
+            <p class="card-text">A Twitter clone developed by Darveloper</p>
+            <a href="login/" class="btn">Login</a>
+        </div>
+    </div>
+<center>
+{% endblock %}

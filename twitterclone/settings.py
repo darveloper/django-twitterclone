@@ -134,3 +134,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 AUTH_USER_MODEL = 'twitteruser.CustomUser'
 django_heroku.settings(locals())
+STATICFILES_DIRS = ( os.path.join('static'), )

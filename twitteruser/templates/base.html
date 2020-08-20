@@ -1,14 +1,40 @@
 <!DOCTYPE html>
-
+{% load static %}
 <html>
 <head>
     <title>TwitterClone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/twitter.css' %}">
 </head>
 <body>
 
-    <center>
+<nav id='navbar' class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">Kwitter</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/user/{{request.user.id}}">Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/add">New Tweet</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+    {% comment %} <center>
         <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: lightgray;">
             <div class="container">
                 <ul class="nav navbar-nav">
@@ -32,7 +58,7 @@
                 {% endif %}
             </div>
         </nav>
-    </center>
+    </center> {% endcomment %}
     <div class="container">
         <p></p>
     </div>

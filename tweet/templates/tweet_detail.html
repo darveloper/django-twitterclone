@@ -1,6 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="login-body" class="card">
 {% csrf_token %}
 {{tweet.text}}
 {{tweet.post_date}}
 {{tweet.author}}
+</div>
 
 <button><a href='/'>Go back home</a></button>
+
+{% endblock %}

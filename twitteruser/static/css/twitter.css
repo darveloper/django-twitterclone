@@ -1,0 +1,93 @@
+body, html {
+    height: 100%;
+    background-image: url("https://preppywallpapers.com/wp-content/uploads/2018/08/Pastel-iPhone-Wallpaper-1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+#navbar {
+    background-color:rgb(167, 181, 208);
+}
+
+#welcome-card {
+    position: absolute;
+    width: 75%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    
+}
+#landing-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    background-color:rgb(167, 181, 208);
+    color: white;
+}
+
+.btn:hover{
+    background-color: white;
+    color: rgb(167, 181, 208);
+}
+
+#login-card {
+    position: absolute;
+    width: 75%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#login-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: medium;
+
+}
+
+#register-card {
+    position: absolute;
+    width: 75%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#register-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: medium;
+
+}
+
+
+
+.card {
+    color: #1d1238;
+}
+
+#tweet-card {
+    width: 50%;
+    text-align: left;
+}
+
+#tweet-author {
+    font-size: smaller;
+}
+#tweet-date {
+    font-size: xx-small;
+}
