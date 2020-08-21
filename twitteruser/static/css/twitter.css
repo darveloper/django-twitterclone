@@ -13,8 +13,8 @@ body, html {
 
 #welcome-card {
     position: absolute;
-    width: 75%;
-    height: 50%;
+    width: 75vh;
+    height: 50vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -40,8 +40,8 @@ body, html {
 
 #login-card {
     position: absolute;
-    width: 75%;
-    height: 50%;
+    width: 75vh;
+    height: 50vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -58,8 +58,8 @@ body, html {
 
 #register-card {
     position: absolute;
-    width: 75%;
-    height: 80%;
+    width: 75vh;
+    height: 80vh;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
