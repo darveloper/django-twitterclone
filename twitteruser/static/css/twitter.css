@@ -57,7 +57,7 @@ body, html {
 }
 
 #register-card {
-    position: absolute;
+    position: relative;
     width: 75vh;
     height: 50vh;
     top: 50%;
