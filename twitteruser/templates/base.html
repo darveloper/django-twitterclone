@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/twitter.css' %}">
 </head>
 <body>
-
+{% if request.user.is_authenticated %}
 <nav id='navbar' class="navbar navbar-expand-lg navbar-dark">
   <a class="navbar-brand" href="#">Kwitter</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,33 +32,13 @@
     </ul>
   </div>
 </nav>
+{% else %}
+<nav id='navbar' class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#">Kwitter</a>
+</nav>
+{% endif %}
 
 
-    {% comment %} <center>
-        <nav class="navbar navbar-expand-lg navbar-light justify-content-between" style="background-color: lightgray;">
-            <div class="container">
-                <ul class="nav navbar-nav">
-                {% if request.user.is_authenticated %}
-                    <li><a class="lead navbar-brand" href="/">Home</a></li>
-                    <li><a class="lead navbar-brand" href="/user/{{request.user.id}}">Profile</a></li>
-                    
-                    
-                </ul>
-                <form class="form-inline" action="{% url 'search' %}" method="get">
-                    <input class="form-control mr-sm-2" name="q" type="text" placeholder="Search for a user!">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                </form>
-                <span class="navbar-text">
-                    <a class="lead navbar-brand mr-sm-2" href="/add/">New Tweet</a>
-                    <a class="lead navbar-brand mr-sm-2" href="/logout">Logout</a>
-                    
-                </span>
-                {% else %}
-                <li><a class="lead navbar-brand">Welcome To My Twitter-Clone!</a></li>
-                {% endif %}
-            </div>
-        </nav>
-    </center> {% endcomment %}
     <div class="container">
         <p></p>
     </div>

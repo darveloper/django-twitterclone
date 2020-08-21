@@ -6,7 +6,7 @@ from notification.models import Notification
 
 def landing(request):
     return render(request, 'landing.html')
-    
+
 @login_required(login_url='/login')
 def index(request):
     user = CustomUser.objects.get(id=request.user.id)
