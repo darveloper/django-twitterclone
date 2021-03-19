@@ -12,7 +12,7 @@ django-computed-property==0.3.0
 django-cors-headers==3.4.0
 django-heroku==0.3.1
 django-icons==2.1.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 docutils==0.16
 entrypoints==0.3
 flake8==3.7.9
